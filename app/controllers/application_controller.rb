@@ -1,6 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  def private_access
+    redirect_to :login unless signed_in?
+  end
+  
+  def public_access
+    redirect_to root_path if signed_in?
+  end
+
   def sign_in(user)
     cookies.permanent.signed[:user_id] = user.id
     @current_user = user

@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Tilte:</strong>
-  <%= @post.tilte %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <p id="notice"><%= notice %></p>
+      <div class="product-page">
+        <header class="product-header">
+          <h1><%= @post.title %></h1>
+          <p><%= @post.body %></p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+        </header>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+        <div class="comments">
+          <h2>Comentarios</h2>
+        </div>
+      </div>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Back', posts_path %>
+
+    </div>
+  </div>
+</div>

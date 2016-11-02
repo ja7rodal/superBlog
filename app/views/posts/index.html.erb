@@ -10,9 +10,12 @@
       <div class="products">
         <% @posts.each do |post| %>
         <div class="product clearfix">
-          <div class="product-details">
+          <div class="">
             <h1> <%= link_to post.title , post_path(post) %></h1>
-            <p class="product-description"><%= post.body %></p>
+            <p><%= user.email %>></p>
+            <span><%= post.updated_at%></span>
+
+            <p><%= post.body %></p>
           </div>
         </div>
         <% end %>

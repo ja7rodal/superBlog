@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-
+#Redcarpet for markdown
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use Puma as the app server
@@ -50,8 +53,6 @@ end
 
 
 group :development do
- gem 'pry-rails'
- gem 'awesome_print'
  gem 'pry-rails'
  gem 'awesome_print'
 end

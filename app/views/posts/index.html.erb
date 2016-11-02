@@ -12,10 +12,15 @@
         <div class="product clearfix">
           <div class="">
             <h1> <%= link_to post.title , post_path(post) %></h1>
-            <p> user.email </p>
-            <span><%= post.updated_at%></span>
-
-            <p><%= post.body %></p>
+            <p>Publicado por <%= post.user.email %> hace <%= time_ago_in_words(post.updated_at) %>
+            </p>
+            <p><%= post.body.first(250) %></p>
+            <% if signed_in? && post.user == current_user %>
+            <div class="actions">
+              <%= link_to "<span class='glyphicon glyphicon-pencil'>Editar </span>".html_safe, edit_post_path(post) %>
+              <%= link_to "<span class='glyphicon glyphicon-trash'>Eliminar</span>".html_safe, @post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %>
+            </div>
+            <% end %>
           </div>
         </div>
         <% end %>

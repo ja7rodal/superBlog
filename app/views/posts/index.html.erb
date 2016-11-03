@@ -2,20 +2,17 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-10 col-sm-offset-1">
-      <%if notice %>
-      <p class="alert alert-danger"><%= notice %></p>
-      <% end %>
+    <div class="col-xs-10 col-sm-offset-1">
       <h1>Posts</h1>
       <div class="products">
         <% @posts.each do |post| %>
         <div class="product clearfix">
           <div class="">
             <h1> <%= link_to post.title , post_path(post) %></h1>
-            <p>Publicado por <%= post.user.email %> hace <%= time_ago_in_words(post.updated_at) %>
+            <p class="text-muted">Publicado por <%= post.user.email %> hace <%= time_ago_in_words(post.updated_at) %>
             </p>
-            <p><%= markdown(post.body.first(250)) %></p>
-      
+            <p class="text-justify"><%= markdown(post.body.first(250)).to_s%> </p>
+
             <% if signed_in? && post.user == current_user %>
             <div class="actions">
               <%= link_to "<span class='glyphicon glyphicon-pencil'>Editar </span>".html_safe, edit_post_path(post) %>

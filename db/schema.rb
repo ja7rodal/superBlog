@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 20161102155327) do
   create_table "users", force: :cascade do |t|
     t.string   "email",           limit: 100
     t.string   "password_digest"
-    t.string   "name",            limit: 100
-    t.string   "twitter_handle",  limit: 50
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end

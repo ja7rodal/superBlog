@@ -8,10 +8,9 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       sign_in(user)
-      flash[:notice] = "Bienvenido"
       redirect_to root_path
     else
-      flash[:notice] = "Tu email y/o contraseña son inválidas. Intenta nuevamente."
+      flash[:error_login] = "Tu email y/o contraseña son inválidas. Intenta nuevamente."
       render :new
     end
   end

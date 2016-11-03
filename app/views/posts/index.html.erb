@@ -16,7 +16,7 @@
             <% if signed_in? && post.user == current_user %>
             <div class="actions">
               <%= link_to "<span class='glyphicon glyphicon-pencil'>Editar </span>".html_safe, edit_post_path(post) %>
-              <%= link_to "<span class='glyphicon glyphicon-trash'>Eliminar</span>".html_safe, @post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %>
+              <%= link_to "<span class='glyphicon glyphicon-trash'>Eliminar</span>".html_safe, post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este post?" } %>
             </div>
             <% end %>
           </div>

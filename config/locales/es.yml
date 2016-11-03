@@ -1,18 +1,12 @@
 es:
-  errors:
-    messages:
-      blank: "no puede estar en blanco"
-      invalid: "es inválido"
-      too_short: "demasiado corto"
-
-      activerecord:
-        attributes:
-          user:
-            name: "Nombre"
-            password: "Contraseña"
-            post:
-              title: "Titulo"
-              body: "Cuerpo"
+  activerecord:
+    attributes:
+      user:
+        name: "Nombre"
+        password: "Contraseña"
+      post:
+        title: "Titulo "
+        body: "Cuerpo "
 
   datetime:
     distance_in_words:

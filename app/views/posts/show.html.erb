@@ -15,7 +15,7 @@
           <% @post.comments.each do |comment| %>
           <div class="panel panel-default">
             <header class="panel-heading"><%= comment.user.email %></header>
-            <div class="panel-body"><%= comment.body %></div>
+            <div class="panel-body"><%= markdown(comment.body) %></div>
           </div>
           <% end %>
 
